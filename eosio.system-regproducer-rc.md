@@ -3,14 +3,14 @@
 ## Description
  
 ### 1. The intent of regproducer
-The intent of the regproducer action is to register a block producer candidacy. This contract is considered a governing document as defined by the EOS User Agreement (EUA).
+The intent of the `{{ regproducer }}` action is to register a block producer candidacy. This contract is considered a governing document as defined by the EOS User Agreement (EUA).
 
 regproducer의 목적
-regproducer 작업의 목적은 블록생산자 입후보 등록을 하는 것입니다. 이 계약은 EOS 사용자 계약서 (EUA)에 정의된 바와 같이 관리 문서로 간주됩니다.
+`{{ regproducer }}` 작업의 목적은 블록생산자 입후보 등록을 하는 것입니다. 이 계약은 EOS 사용자 계약서 (EUA)에 정의된 바와 같이 관리 문서로 간주됩니다.
 
 regproducer 的目的
 
-regproducer 操作的目的是注册成为出块节点候选者。根据 EOS 用户协议(EUA)的定义，本合约属于治理文本(governing document )
+`{{ regproducer }}`操作的目的是注册成为出块节点候选者。根据 EOS 用户协议(EUA)的定义，本合约属于治理文本(governing document )
 
 ### 2. Nomination
 I, {{producer}}, hereby nominate myself for consideration as a block producer candidate. This nomination includes agreement to the terms of this contract by my block producer candidate entity, including all of its shareholders, owners, employees, staff, members, and any individual working in official, direct, or affiliated capacity for my Block Producer entity.
