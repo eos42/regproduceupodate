@@ -14,7 +14,7 @@ regproducer의 목적
 
 regproducer 的目的
 
-`regproducer`操作的目的是注册成为出块节点候选者。根据 EOS 用户协议(EUA)的定义，本合约属于治理文本(governing document )
+`regproducer`操作的目的是注册成为出块节点候选者。根据 EOS 用户协议(EUA)的定义，本合约属于治理文本(governing document)
 
 ### 2. Nomination
 I, {{ producer }}, hereby nominate myself for consideration as a block producer candidate. This nomination includes agreement to the terms of this contract by my block producer candidate entity, including all of its shareholders, owners, employees, staff, members, and any individual working in official, direct, or affiliated capacity for my Block Producer entity.
@@ -34,21 +34,23 @@ If I, {{ producer }}, am unable to perform any of the obligations stipulated in 
 If I, {{ producer }}, fail to resign when unable to perform said obligations, I understand that procedures enumerated in this contract shall be enacted.
 
 의무의 불이행에 대한 사임 및 철회
+
 {{ producer }}가 본 계약서에 명시된 의무를 수행 할 수 없는 경우, 생산자 키를 null 로 함으로써 본인의 지위를 사임합니다.
 
 만약 내가 {{producer}}의 의무를 이행 할 수 없을 때 사임하지 않는다면, 나는 본 계약에 열거된 절차가 집행됨을 동의합니다.
 
 因不能履行义务而退出或被取消出块资格
  
-如果我，{{ producer }}，不能履行本合约中所规定的任何义务，我将使用无效的出块节点公钥调用本合约，从而使我的出块节点退出。
+如果我，{{ producer }}，不能履行本合约中所规定的所有义务，我将使用 `unregprod` 操作来自我退出（resign）。
 
-如果我 {{ producer }}, 在无法履行上述义务时未能退出(resign)，我知晓将会根据本合约所列举的程序对我实行制裁或处罚程序。
+如果我 {{ producer }}, 在无法履行上述义务时未能退出(resign)，我知晓本合约将会按照所有列举的程序对我实行制裁或处罚程序。
 
 ### 4. EOS Accounts
 
 Block Producers may never affect an account on the EOS blockchain, except for the reasons specifically cited in this contract that pertain to Block Producer accounts. User accounts can only be affected on the basis of Article VIII in the EOS User Agreement.
  
 EOS 계정
+
 블록프로듀서는 본 계약에서 해당하는 블록프로듀서의 계정 차단에 관련하여 특별히 언급한 이유를 제외하고는 EOS 블록체인의 계정에 결코 영향을 미치지 않습니다. 사용자 계정은 EOS 사용자 계약서의 8조에 근거할 때만 영향을 받을 수 있습니다.
 
 EOS 账号
@@ -82,6 +84,7 @@ If I, {{ producer }}, qualify for, and choose to claim rewards due to votes rece
 I, {{ producer }}, hereby acknowledge that if I am unable to do so within 30 minutes of being alerted by another block producer candidate, I can be removed by use of the `rmvproducer` action.
 
 API 엔드포인트
+
 만약 내, {{ producer }} 가 투표를 받아 블록 보상을 청구할 수 있는 자격을 얻으면, 나 {{ producer }}는 작동 및 쿼리 가능한 공개 P2P 및 API 엔드포인트를 블록체인과의 동기화 및 트랜잭션을 제출할 수 있게 유지관리합니다. API 엔드포인트는 알려진 보안 취약성이 없는 최신버전으로 업데이트해야 합니다.
  
 나, {{ producer }} 는 다른 block producer candidate 가 경고 ​​한 후, 30분 이내에 바로잡을 수 없다면 `rmvproducer` 조치를 통해 자격이 제거 될 수 있음을 인정합니다.
@@ -124,6 +127,7 @@ I {{ producer }} agree to process transactions on a first-in-first-out (FIFO) ba
 I, {{ producer }}, agree that if I am in a paid standby position, I can be randomly called into a producing position. Upon failure to produce blocks, code may self-execute penalties regarding future vpay rewards.
 
 유급 대기 블록프로듀서의 무작위 로테이션
+
 나, {{ producer }}는 본인이 유급 대기직에 있을 때, 무작위로 생산직으로 부름 받을 수 있다는 것에 동의합니다. 이때 블록을 생성하지 못하면 코드는 향후 vpay 보상에 대한 처벌을 집행할 수 있습니다.
 
 备选节点随机轮换
@@ -143,7 +147,7 @@ I, {{ producer }}, acknowledge that after missing two or more rounds of blocks i
 
 两轮或更多轮丢块的情形
  
-我，{{ producer }}, 如果连续两轮或更多轮丢块且无法在20分钟内联系到我，我，{{ producer }}, 同意可能会用 `rmvproducer` 操作将我移除。
+我，{{ producer }}, 确认如果连续两轮或更多轮丢块且无法在20分钟内联系到我，我，{{ producer }}, 同意可能会用 `rmvproducer` 操作将我移除。
 我，{{ producer }}, 如果连续两轮或更多轮丢块，根据标准实践会发起 `unregprod` 操作将我移除出块资格，直到问题解决。
  
 ### 11. Urgent Security Patches
@@ -165,7 +169,7 @@ I, {{ producer }}, attest that I have disclosed the approximate geolocation for 
 
 实体和服务器的信息披露
 
-我，{{ producer }}，确认我已经披露了主出块节点服务器地理位置的准确信息。
+我，{{ producer }}，确认我已经披露了主出块节点服务器地理位置的准确信息。其地址为 {{ location }}。
 
 ### 13. Establishes the penalty and procedure for unwillingness to comply with penalties or procedures
 
@@ -184,7 +188,7 @@ I, {{ producer }}, acknowledge that if I continue to call the `regproducer` acti
  
 我，{{ producer }}，承认若不遵守对本人制裁的处罚，BP 可以实施 `rmvproducer` 合约，我接受投票的资格将被取消。若有针对我实施 `rmvproducer` 合约的情况发生，我, {{ producer }} 在遵守/履行所收到的处罚之前，不会再次执行 `regproducer` 合约。
 
-我，{{ producer }}，在履行惩罚程序的要求之前，不会执行 `regproducer` 合同。如不履行此程序， `rmvproducer` 合同将会再次将我移除。
+我，{{ producer }}，在履行惩罚程序的要求之前，不会执行 `regproducer` 合同。我知晓如不履行此程序， `rmvproducer` 合同将会再次将我移除。
 
 我,{{ producer }}, 承认如果没有遵守或履行因违反 `regproducer` 而受到的惩罚要求却继续调用`regproducer`操作，BP 可以调用 `eosio.wrap` 合约将我用来注册出块节点的账号密钥设置为无效值。
  
